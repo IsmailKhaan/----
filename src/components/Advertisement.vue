@@ -8,7 +8,7 @@ const isPromo = ref(true)
 <template>
   <div v-if="isPromo" class="advertisement">
     <div @click="isPromo = !isPromo" class="cross"> &#9587</div>
-    <img class="promo" :src="promotion" alt="">
+    <img class="promo" :src="promotion" alt="promo">
     <div class="trife">立即下載</div>
   </div>
 </template>
@@ -18,7 +18,7 @@ const isPromo = ref(true)
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 8px;
   background-color: whitesmoke;
   position: sticky;
   top: 0;
@@ -32,7 +32,7 @@ const isPromo = ref(true)
   font-size: 12px;
 }
 .promo{
-  width: 280px;
+  width: 250px;
   height: 60px;
   object-fit: cover;
 }

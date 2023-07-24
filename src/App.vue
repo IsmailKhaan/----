@@ -6,14 +6,12 @@ import Navigations from "./components/Navigations.vue";
 </script>
 
 <template>
-  <div class="app">
-    <Advertisement />
-    <div class="main">
-      <HeroSection />
-      <ViewPlayers />
-    </div>
-    <Navigations />
+  <Advertisement />
+  <div class="main">
+    <HeroSection />
+    <ViewPlayers />
   </div>
+  <Navigations />
 </template>
 
 <style>

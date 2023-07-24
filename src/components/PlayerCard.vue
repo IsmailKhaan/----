@@ -27,7 +27,7 @@ const props = defineProps({
 <style>
 .player-card {
   height: 160px;
-  width: 310px;
+  width: 265px;
   background: #eff1fe;
   border-radius: 16px;
   display: flex;

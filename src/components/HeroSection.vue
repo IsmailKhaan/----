@@ -104,7 +104,7 @@ const paymentMethods = reactive([
 
 .carousel {
   height: 200px;
-  width: 400px;
+  width: 360px;
   border-radius: 16px;
   margin-left: -24px;
 }
