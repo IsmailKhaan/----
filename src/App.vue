@@ -1,16 +1,16 @@
 <script setup>
+import Advertisement from "./components/Advertisement.vue";
 import HeroSection from "./components/HeroSection.vue";
 import ViewPlayers from "./components/ViewPlayers.vue";
-import Advertisement from "./components/Advertisement.vue";
 import Navigations from "./components/Navigations.vue";
 </script>
 
 <template>
-  <Advertisement />
   <div class="main">
+    <Advertisement />
     <HeroSection />
-    <ViewPlayers />
   </div>
+  <ViewPlayers />
   <Navigations />
 </template>
 
@@ -20,13 +20,22 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ebeefd;
-  display: flex;
-  justify-content: center;
   font-family: sans-serif;
-  color: gray;
+  color: #6d7ba8;
+  overflow-x: hidden;
 }
-
 .main {
-  overflow-y: scroll;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #ff7700 !important;
 }
 </style>

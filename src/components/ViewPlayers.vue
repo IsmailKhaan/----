@@ -5,16 +5,25 @@ import PlayersSection from "./PlayersSection.vue";
 
 <template>
   <div class="view-player">
-    <SelectionMenu />
-    <PlayersSection />
+    <div class="menu">
+      <SelectionMenu />
+    </div>
+    <div class="cards">
+      <PlayersSection />
+    </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .view-player {
   display: flex;
+  justify-content: space-between;
   align-items: start;
+  margin: 10px;
+  margin-bottom: 100px;
   gap: 10px;
-  padding: 8px;
+}
+.cards {
+  overflow-y: scroll;
 }
 </style>

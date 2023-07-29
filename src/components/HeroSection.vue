@@ -1,7 +1,11 @@
 <script setup>
 import { reactive } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 import Payments from "./Payments.vue";
-import cover from "/images/cover.png";
 import deposite from "/images/deposite.png";
 import transfer from "/images/transfer.png";
 import withdraw from "/images/withdraw.png";
@@ -9,6 +13,11 @@ import vip from "/images/vip.png";
 import speak from "/images/speak.png";
 import xunli from "/images/xunli.png";
 import sound from "/images/sound.png";
+import cover_1 from "/images/cover_1.jpg";
+import cover_2 from "/images/cover_2.jpg";
+import cover_3 from "/images/cover_3.jpg";
+import cover_4 from "/images/cover_4.jpg";
+import cover_5 from "/images/cover_5.jpg";
 
 const paymentMethods = reactive([
   {
@@ -28,6 +37,7 @@ const paymentMethods = reactive([
     text: "贵宾",
   },
 ]);
+const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
 </script>
 
 <template>
@@ -42,19 +52,27 @@ const paymentMethods = reactive([
       </div>
       <img class="header-right" :src="speak" alt="icon" />
     </div>
-    <img class="carousel" :src="cover" alt="cover" />
+    <!-- <img class="carousel" :src="cover" alt="cover" /> -->
+    <Swiper
+      :modules="[Pagination, Autoplay]"
+      :grab-cursor="true"
+      :loop="true"
+      :pagination="{ clickable: true }"
+      :autoplay="{ delay: 1500, disableOnInteraction: false }"
+    >
+      <SwiperSlide v-for="photo in photos">
+        <img class="carousel" :src="photo" alt="photo" />
+      </SwiperSlide>
+    </Swiper>
     <div class="input">
       <div class="sound-icon">
         <img :src="sound" alt="icon" />
       </div>
-      <input type="text" placeholder="XXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+      <marquee scrollamount="10">测试滚动公告内容，欢迎来到汛利娱乐</marquee>
       <div class="submit">更多</div>
     </div>
     <div class="footer">
-      <div class="footer-left">
-        <div class="footer-top">您还未登录</div>
-        <div class="footer-bottom">登录/注册后查看</div>
-      </div>
+      <div class="footer-bottom">登录/注册后查看</div>
       <div class="footer-right">
         <div v-for="(payment, index) in paymentMethods" :key="index">
           <Payments :icon="payment.icon" :text="payment.text" />
@@ -71,6 +89,7 @@ const paymentMethods = reactive([
   gap: 10px;
   background-color: white;
   padding: 10px;
+  overflow: hidden;
   border-radius: 0 0 20px 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -90,7 +109,7 @@ const paymentMethods = reactive([
   height: 20px;
   width: 20px;
   padding: 1px;
-  background-color: #f38245;
+  background: linear-gradient(180deg, #feb68e, #f76f3f);
 }
 .header-left {
   display: flex;
@@ -103,10 +122,6 @@ const paymentMethods = reactive([
 }
 
 .carousel {
-  height: 200px;
-  width: 360px;
-  border-radius: 16px;
-  margin-left: -24px;
 }
 
 .input {
@@ -118,11 +133,12 @@ const paymentMethods = reactive([
   border-radius: 20px;
 }
 
-input {
+marquee {
   flex: 1;
   background: transparent;
   outline: none;
   border: none;
+  padding: 2px;
 }
 
 .footer {
@@ -154,7 +170,7 @@ input {
 .submit {
   border-radius: 20px;
   padding: 2px 14px;
-  background-color: #f38245;
+  background: linear-gradient(180deg, #feb68e, #f76f3f);
   color: white;
   font-size: 12px;
 }
@@ -170,5 +186,18 @@ input {
 }
 .link {
   font-size: 12.5px;
+}
+
+.swiper {
+  width: 100%;
+  height: 200px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: top;
 }
 </style>

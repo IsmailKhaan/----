@@ -53,10 +53,12 @@ const activeIndex = ref(2);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 4px;
-  position: sticky;
+  padding: 10px 0;
+  position: fixed !important;
+  width: 100vw;
   bottom: 0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 200;
 }
 .btn {
   display: flex;
@@ -68,7 +70,7 @@ const activeIndex = ref(2);
   background-color: white;
 }
 .active {
-  background-color: #f38245;
+  background: linear-gradient(180deg, #feb68e, #f76f3f);
   border-radius: 100%;
   height: 70px;
   width: 70px;

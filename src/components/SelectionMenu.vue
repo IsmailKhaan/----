@@ -9,18 +9,22 @@ const buttons = reactive([
   {
     icon: football,
     text: "体育",
+    to: "/#football",
   },
   {
     icon: games,
     text: "电竞",
+    to: "/#games",
   },
   {
     icon: persons,
     text: "真人",
+    to: "/#ludo",
   },
   {
     icon: chess,
     text: "棋牌",
+    to: "/#chess",
   },
 ]);
 const activeIndex = ref(0);
@@ -34,13 +38,14 @@ const activeIndex = ref(0);
       :key="index"
       @click="activeIndex = index"
     >
-      <button
+      <a
         class="btn-content"
         :class="index === activeIndex ? 'active' : ''"
+        :href="btn.to"
       >
         <img :src="btn.icon" alt="icon" />
         <div>{{ btn.text }}</div>
-      </button>
+      </a>
     </div>
   </div>
 </template>
@@ -52,6 +57,7 @@ const activeIndex = ref(0);
   justify-content: center;
   font-size: 14px;
   gap: 6px;
+  /* position: fixed; */
 }
 .btn {
   padding: 4px;
@@ -65,6 +71,8 @@ const activeIndex = ref(0);
   flex-direction: column;
   justify-content: center;
   gap: 4px;
+  color: gray;
+  text-decoration: none;
   border-radius: 14px;
   align-items: center;
   background-color: white;
@@ -72,7 +80,7 @@ const activeIndex = ref(0);
 }
 
 .active {
-  background-color: #f38245;
+  background: linear-gradient(180deg, #feb68e, #f76f3f);
   color: white;
   outline: none;
 }

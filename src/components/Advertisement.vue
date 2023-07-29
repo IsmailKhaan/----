@@ -18,26 +18,24 @@ const isPromo = ref(true)
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8px;
+  padding: 0 10px;
   background-color: whitesmoke;
-  position: sticky;
-  top: 0;
 }
 
 .trife {
-  border-radius: 20px;
+  border-radius: 14px;
   padding: 2px 8px;
-  background-color: #F38245;
+  background: linear-gradient(180deg,#feb68e,#f76f3f);
   color: white;
-  font-size: 12px;
+  font-size: 14px;
 }
-.promo{
-  width: 250px;
-  height: 60px;
-  object-fit: cover;
+img{
+  width: 70%;
+  height: 70px;
+  object-fit: fill;
 }
 .cross{
-  font-size: 30px;
+  font-size: 20px;
   color: #DEE3F1;
   font-weight:bolder;
 }
