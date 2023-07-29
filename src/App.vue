@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ebeefd;
-  font-family: sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #6d7ba8;
   overflow-x: hidden;
 }
@@ -30,8 +30,8 @@ body {
   z-index: 200;
 }
 .swiper-pagination-bullet {
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
   background-color: white;
   opacity: 1;
 }
