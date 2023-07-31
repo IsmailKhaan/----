@@ -18,7 +18,6 @@ const props = defineProps({
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2px;
   font-size: 12px;
 }
 .icons {

@@ -81,7 +81,6 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
   flex-direction: column;
   gap: 6px;
   background-color: white;
-  /* padding: ; */
   overflow: hidden;
   border-radius: 0 0 20px 20px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -145,9 +144,8 @@ marquee {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: url("/images/bg_hero_section.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
   padding: 0 20px;
   padding-top: -20px;
   padding-bottom: 10px;
