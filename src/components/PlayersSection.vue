@@ -131,7 +131,6 @@ section,
   font-size: 12px;
   color: #fff;
   font-size: 12px;
-  /* border-radius: 20px 0 30px 0; */
   margin-bottom: -30px;
 }
 

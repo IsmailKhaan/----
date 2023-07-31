@@ -6,8 +6,10 @@ import Navigations from "./components/Navigations.vue";
 </script>
 
 <template>
-  <Advertisement />
-  <HeroSection />
+  <div class="main">
+    <Advertisement />
+    <HeroSection />
+  </div>
   <ViewPlayers />
   <Navigations />
 </template>
@@ -20,6 +22,11 @@ body {
   background-color: #ebeefd;
   font-family: Helvetica, Arial, sans-serif;
   color: #6d7ba8;
+}
+.main {
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 .swiper-pagination-bullet {
   width: 10px;

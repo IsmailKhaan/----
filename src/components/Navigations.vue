@@ -17,7 +17,7 @@ const navButtons = reactive([
   },
   {
     icon: home,
-    text: "喂养",
+    text: "",
   },
   {
     icon: sponsor,
@@ -37,10 +37,9 @@ const activeIndex = ref(2);
       v-for="(btn, index) in navButtons"
       :key="index"
       class="btn"
-      :class="index === activeIndex ? 'active' : ''"
       @click="activeIndex = index"
     >
-      <img :src="btn.icon" alt="icon" />
+      <img :class="index === 2 && 'home'" :src="btn.icon" alt="icon" />
       <div>{{ btn.text }}</div>
     </button>
   </div>
@@ -57,7 +56,7 @@ const activeIndex = ref(2);
   position: fixed !important;
   width: 100vw;
   bottom: 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: 0 0 5px 2px hsla(0, 0%, 65.5%, 0.4);
   z-index: 200;
 }
 .btn {
@@ -69,18 +68,10 @@ const activeIndex = ref(2);
   border: none;
   background-color: white;
 }
-.active {
-  background: linear-gradient(180deg, #feb68e, #f76f3f);
-  border-radius: 100%;
-  height: 70px;
-  width: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 2px wheat;
-  color: white;
-  margin-top: -20px;
-  outline: none;
+.home {
+  width: 75px;
+  width: 75px;
+  margin-top: -15px;
 }
 img {
   width: 30px;

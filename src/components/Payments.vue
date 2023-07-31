@@ -7,7 +7,7 @@ const props = defineProps({
 
 <template>
   <div class="icon-btn">
-    <img :src="props.icon" alt="icon" />
+    <img class="icons" :src="props.icon" alt="icon" />
     <div>{{ props.text }}</div>
   </div>
 </template>
@@ -20,5 +20,9 @@ const props = defineProps({
   align-items: center;
   gap: 2px;
   font-size: 12px;
+}
+.icons {
+  width: 40px;
+  height: 40px;
 }
 </style>

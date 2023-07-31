@@ -46,22 +46,21 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
       <img class="logo" :src="xunli_logo" alt="xunli_logo" />
       <img class="header-right" :src="speak" alt="icon" />
     </div>
-    <!-- <img class="carousel" :src="cover" alt="cover" /> -->
-    <Swiper
-      :modules="[Pagination, Autoplay]"
-      :grab-cursor="true"
-      :loop="true"
-      :pagination="{ clickable: true }"
-      :autoplay="{ delay: 2000, disableOnInteraction: false }"
-    >
-      <SwiperSlide v-for="photo in photos">
-        <img class="carousel" :src="photo" alt="photo" />
-      </SwiperSlide>
-    </Swiper>
+    <div class="carousel-section">
+      <Swiper
+        :modules="[Pagination, Autoplay]"
+        :grab-cursor="true"
+        :loop="true"
+        :pagination="{ clickable: true }"
+        :autoplay="{ delay: 2000, disableOnInteraction: false }"
+      >
+        <SwiperSlide v-for="photo in photos">
+          <img class="carousel" :src="photo" alt="photo" />
+        </SwiperSlide>
+      </Swiper>
+    </div>
     <div class="input">
-      <div class="sound-icon">
-        <img :src="sound" alt="icon" />
-      </div>
+      <img class="sound" :src="sound" alt="icon" />
       <marquee scrollamount="10">测试滚动公告内容，欢迎来到汛利娱乐</marquee>
       <div class="submit">更多</div>
     </div>
@@ -82,11 +81,10 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
   flex-direction: column;
   gap: 6px;
   background-color: white;
-  padding: 12px;
+  /* padding: ; */
   overflow: hidden;
   border-radius: 0 0 20px 20px;
-  box-shadow: rgba(196, 196, 206, 0.25) 0px 6px 12px -2px,
-    rgba(213, 203, 203, 0.3) 0px 3px 7px -3px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 .logo {
   width: 106px;
@@ -96,7 +94,10 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  padding: 12px;
+}
+.carousel-section {
+  padding: 0 12px;
 }
 .sound-icon {
   display: flex;
@@ -113,7 +114,10 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
   align-items: center;
   gap: 4px;
 }
-
+.sound {
+  width: 22px;
+  height: 22px;
+}
 .header-right {
   width: 20px;
 }
@@ -125,6 +129,7 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
   padding: 4px;
   background-color: #f1f2f8;
   border-radius: 20px;
+  margin: 0 12px;
 }
 
 marquee {
@@ -140,26 +145,30 @@ marquee {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-image: url("/images/bg_hero_section.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0 20px;
+  padding-top: -20px;
+  padding-bottom: 10px;
 }
-.footer-top {
-  font-weight: bolder;
-  color: black;
-  font-size: 18px;
-}
-
 .footer-bottom {
-  border-radius: 20px;
-  box-shadow: rgba(144, 169, 179, 0.25) 0px 6px 12px -2px,
-    rgba(145, 97, 97, 0.3) 0px 3px 7px -3px;
-  padding: 4px 40px;
+  height: 30px;
+  min-width: 100px;
+  padding-top: 10px;
+  color: #6d7ba8;
   font-size: 14px;
-  background-color: #f4f8fe;
+  border-radius: 50px;
+  box-shadow: 0 2px 3px #d3deff;
+  background: linear-gradient(180deg, #fcfeff, #f1f5fe);
+  text-align: center;
 }
 
 .footer-right {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: black;
 }
 
 .submit {
@@ -191,7 +200,7 @@ marquee {
   width: 100%;
   height: 100%;
   border-radius: 14px;
-  object-fit:cover;
+  object-fit: cover;
   object-position: top;
 }
 </style>
