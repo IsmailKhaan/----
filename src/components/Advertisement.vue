@@ -31,12 +31,12 @@ const isPromo = ref(true)
   font-size: 12px;
 }
 img{
-  width: 70%;
+  width: 60%;
   height: 70px;
   object-fit: fill;
 }
 .cross{
-  font-size: 30px;
+  font-size: 20px;
   color: #DEE3F1;
   font-weight:bolder;
 }
