@@ -146,9 +146,7 @@ marquee {
   justify-content: space-between;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 4px;
-  padding: 0 20px;
-  padding-top: -20px;
-  padding-bottom: 10px;
+  padding: 0 12px;
 }
 .footer-bottom {
   height: 30px;
