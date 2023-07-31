@@ -20,7 +20,6 @@ body {
   background-color: #ebeefd;
   font-family: Helvetica, Arial, sans-serif;
   color: #6d7ba8;
-  overflow: hidden;
 }
 .swiper-pagination-bullet {
   width: 10px;

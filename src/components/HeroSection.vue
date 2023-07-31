@@ -174,7 +174,6 @@ marquee {
   width: 50px;
   height: 40px;
 }
-
 .heading {
   font-size: larger;
   font-weight: bolder;
@@ -185,14 +184,14 @@ marquee {
 
 .swiper {
   width: 100%;
-  height: 200px;
+  height: 140px;
 }
 
 .swiper-slide img {
   width: 100%;
   height: 100%;
   border-radius: 14px;
-  object-fit: cover;
+  object-fit:cover;
   object-position: top;
 }
 </style>

@@ -54,7 +54,13 @@ const handleSetScrollMargin = (value) => {
 }
 .scroll,
 .menu_scroll {
-  height: 40vh;
+  height: 38vh;
   overflow-y: auto;
+}
+
+.scroll,
+.menu_scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 </style>
