@@ -1,51 +1,99 @@
 <script setup>
-import { reactive, ref } from "vue";
-import football from "/images/football.png";
-import games from "/images/games.png";
-import persons from "/images/persons.png";
-import chess from "/images/chess.png";
+import { reactive, ref, watch } from "vue";
+import footballtab from "/images/footballtab.png";
+import footballtab_active from "/images/footballtab_active.png";
+import gamestab from "/images/gamestab.png";
+import gamestab_active from "/images/gamestab_active.png";
+import ludotab from "/images/ludotab.png";
+import ludotab_active from "/images/ludotab_active.png";
+import chesstab from "/images/chesstab.png";
+import chesstab_active from "/images/chesstab_active.png";
+import spottab from "/images/spottab.png";
+import spottab_active from "/images/spottab_active.png";
+import pooltab from "/images/pooltab.png";
+import pooltab_active from "/images/pooltab_active.png";
+
+const props = defineProps({
+  scrollValue: Object,
+});
+
+const emit = defineEmits(["handleSetScrollMargin"]);
 
 const buttons = reactive([
   {
-    icon: football,
-    text: "体育",
-    to: "/#football",
+    icon: footballtab,
+    activeIcon: footballtab_active,
+    scrollMargin: 0,
   },
   {
-    icon: games,
-    text: "电竞",
-    to: "/#games",
+    icon: gamestab,
+    activeIcon: gamestab_active,
+    scrollMargin: 371,
   },
   {
-    icon: persons,
-    text: "真人",
-    to: "/#ludo",
+    icon: ludotab,
+    activeIcon: ludotab_active,
+    scrollMargin: 761,
   },
   {
-    icon: chess,
-    text: "棋牌",
-    to: "/#chess",
+    icon: chesstab,
+    activeIcon: chesstab_active,
+    scrollMargin: 1141,
+  },
+  {
+    icon: spottab,
+    activeIcon: spottab_active,
+    scrollMargin: 1531,
+  },
+  {
+    icon: pooltab,
+    activeIcon: pooltab_active,
+    scrollMargin: 1911,
   },
 ]);
 const activeIndex = ref(0);
+
+watch(
+  () => props.scrollValue.value,
+  (scrollValue) => {
+    console.log("Scroll Value:", scrollValue);
+    switch (true) {
+      case scrollValue > 1910:
+        activeIndex.value = 5;
+        break;
+      case scrollValue > 1530:
+        activeIndex.value = 4;
+        break;
+      case scrollValue > 1140:
+        activeIndex.value = 3;
+        break;
+      case scrollValue > 760:
+        activeIndex.value = 2;
+        break;
+      case scrollValue > 370:
+        activeIndex.value = 1;
+        break;
+      default:
+        activeIndex.value = 0;
+    }
+  }
+);
 </script>
 
 <template>
   <div class="player-menu">
     <div
-      class="btn"
       v-for="(btn, index) in buttons"
       :key="index"
-      @click="activeIndex = index"
+      @click="
+        activeIndex = index;
+        emit('handleSetScrollMargin', btn.scrollMargin);
+      "
     >
-      <a
-        class="btn-content"
-        :class="index === activeIndex ? 'active' : ''"
-        :href="btn.to"
-      >
-        <img :src="btn.icon" alt="icon" />
-        <div>{{ btn.text }}</div>
-      </a>
+      <img
+        :src="index === activeIndex ? btn.activeIcon : btn.icon"
+        alt="icon"
+      />
     </div>
   </div>
 </template>
@@ -55,36 +103,10 @@ const activeIndex = ref(0);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 14px;
   gap: 6px;
-  /* position: fixed; */
-}
-.btn {
-  padding: 4px;
-  background-color: white;
-  border-radius: 14px;
-}
-
-.btn-content {
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-  color: gray;
-  text-decoration: none;
-  border-radius: 14px;
-  align-items: center;
-  background-color: white;
-  border: none;
-}
-
-.active {
-  background: linear-gradient(180deg, #feb68e, #f76f3f);
-  color: white;
-  outline: none;
 }
 img {
-  width: 40px;
+  width: 54px;
+  height: 68px;
 }
 </style>

@@ -11,13 +11,13 @@ import transfer from "/images/transfer.png";
 import withdraw from "/images/withdraw.png";
 import vip from "/images/vip.png";
 import speak from "/images/speak.png";
-import xunli from "/images/xunli.png";
 import sound from "/images/sound.png";
 import cover_1 from "/images/cover_1.jpg";
 import cover_2 from "/images/cover_2.jpg";
 import cover_3 from "/images/cover_3.jpg";
 import cover_4 from "/images/cover_4.jpg";
 import cover_5 from "/images/cover_5.jpg";
+import xunli_logo from "/images/xunli_logo.png";
 
 const paymentMethods = reactive([
   {
@@ -43,13 +43,7 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
 <template>
   <div class="hero-section">
     <div class="header">
-      <div class="header-left">
-        <img class="club-icon" :src="xunli" alt="icon" />
-        <div>
-          <div class="heading">汛利娱乐</div>
-          <div class="link">www.xunli.bet</div>
-        </div>
-      </div>
+      <img class="logo" :src="xunli_logo" alt="xunli_logo" />
       <img class="header-right" :src="speak" alt="icon" />
     </div>
     <!-- <img class="carousel" :src="cover" alt="cover" /> -->
@@ -58,7 +52,7 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
       :grab-cursor="true"
       :loop="true"
       :pagination="{ clickable: true }"
-      :autoplay="{ delay: 1500, disableOnInteraction: false }"
+      :autoplay="{ delay: 2000, disableOnInteraction: false }"
     >
       <SwiperSlide v-for="photo in photos">
         <img class="carousel" :src="photo" alt="photo" />
@@ -72,7 +66,7 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
       <div class="submit">更多</div>
     </div>
     <div class="footer">
-      <div class="footer-bottom">登录/注册后查看</div>
+      <div class="footer-bottom">登录/注册</div>
       <div class="footer-right">
         <div v-for="(payment, index) in paymentMethods" :key="index">
           <Payments :icon="payment.icon" :text="payment.text" />
@@ -86,15 +80,18 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
   background-color: white;
-  padding: 10px;
+  padding: 12px;
   overflow: hidden;
   border-radius: 0 0 20px 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-
+.logo {
+  width: 106px;
+  height: 24px;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -121,9 +118,6 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
   width: 20px;
 }
 
-.carousel {
-}
-
 .input {
   display: flex;
   align-items: center;
@@ -139,6 +133,7 @@ marquee {
   outline: none;
   border: none;
   padding: 2px;
+  font-size: 12px;
 }
 
 .footer {
@@ -154,11 +149,11 @@ marquee {
 
 .footer-bottom {
   border-radius: 20px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  padding: 4px 10px;
+  box-shadow: rgba(144, 169, 179, 0.25) 0px 6px 12px -2px,
+    rgba(145, 97, 97, 0.3) 0px 3px 7px -3px;
+  padding: 4px 40px;
   font-size: 14px;
-  margin-top: 4px;
+  background-color: #f4f8fe;
 }
 
 .footer-right {

@@ -53,7 +53,7 @@ const activeIndex = ref(2);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
+  padding: 6px 0;
   position: fixed !important;
   width: 100vw;
   bottom: 0;

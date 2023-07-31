@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import promotion from '/images/promotion.png'
 
 const isPromo = ref(true)
 </script>
@@ -8,34 +7,34 @@ const isPromo = ref(true)
 <template>
   <div v-if="isPromo" class="advertisement">
     <div @click="isPromo = !isPromo" class="cross"> &#9587</div>
-    <img class="promo" :src="promotion" alt="promo">
     <div class="trife">立即下載</div>
   </div>
 </template>
 
 <style scoped>
 .advertisement {
+  transition: all ease-out .3s;
+background: url('/images/promotion.png') no-repeat;
+  background-size: 100% 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
   background-color: whitesmoke;
+  width: 957;
+  overflow: hidden;
+  height: 60px;
+  padding: 0 14px;
 }
 
 .trife {
   border-radius: 14px;
-  padding: 2px 8px;
+  padding: 2px 11px;
   background: linear-gradient(180deg,#feb68e,#f76f3f);
   color: white;
-  font-size: 14px;
-}
-img{
-  width: 70%;
-  height: 70px;
-  object-fit: fill;
+  font-size: 12px;
 }
 .cross{
-  font-size: 20px;
+  font-size: 30px;
   color: #DEE3F1;
   font-weight:bolder;
 }

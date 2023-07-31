@@ -11,6 +11,12 @@ import ludo_3 from "/images/ludo_3.png";
 import chess_1 from "/images/chess_1.png";
 import chess_2 from "/images/chess_2.png";
 import chess_3 from "/images/chess_3.png";
+import spot_1 from "/images/spot_1.png";
+import spot_2 from "/images/spot_2.png";
+import spot_3 from "/images/spot_3.png";
+import pool_1 from "/images/pool_1.png";
+import pool_2 from "/images/pool_2.png";
+import pool_3 from "/images/pool_3.png";
 </script>
 
 <template>
@@ -71,6 +77,34 @@ import chess_3 from "/images/chess_3.png";
         <img :src="chess_3" alt="" />
       </div>
     </section>
+    <section id="spot">
+      <div class="main-card">
+        <div class="label">微過返水 1.00 %</div>
+        <img :src="spot_1" alt="" />
+      </div>
+      <div class="main-card">
+        <div class="label">微過返水 1.00 %</div>
+        <img :src="spot_2" alt="" />
+      </div>
+      <div class="main-card">
+        <div class="label">微過返水 1.00 %</div>
+        <img :src="spot_3" alt="" />
+      </div>
+    </section>
+    <section id="pool">
+      <div class="main-card">
+        <div class="label">微過返水 0.00 %</div>
+        <img :src="pool_1" alt="" />
+      </div>
+      <div class="main-card">
+        <div class="label">微過返水 0.00 %</div>
+        <img :src="pool_2" alt="" />
+      </div>
+      <div class="main-card">
+        <div class="label">微過返水 0.00 %</div>
+        <img :src="pool_3" alt="" />
+      </div>
+    </section>
   </div>
 </template>
 
@@ -86,19 +120,24 @@ section,
   flex-direction: column;
 }
 .label {
-  background: linear-gradient(180deg, #feb68e, #f76f3f);
-  width: fit-content;
-  color: white;
-  padding: 2px 20px;
+  /* background: linear-gradient(180deg, #feb68e, #f76f3f); */
+  background: url("/images/bg_curved.png") no-repeat 50%;
+  background-size: 100%;
+  width: 121px;
+  height: 30px;
+  line-height: 23px;
+  z-index: 10;
+  text-align: center;
   font-size: 12px;
-  border-radius: 20px 0 30px 0;
-  margin-bottom: -21px;
-  z-index: 100;
+  color: #fff;
+  font-size: 12px;
+  /* border-radius: 20px 0 30px 0; */
+  margin-bottom: -30px;
 }
 
 img {
   width: 100%;
   height: 100%;
-  max-width: 300px;
+  max-width: 280px;
 }
 </style>
