@@ -85,8 +85,8 @@ const photos = reactive([cover_1, cover_2, cover_3, cover_4, cover_5]);
   padding: 12px;
   overflow: hidden;
   border-radius: 0 0 20px 20px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(196, 196, 206, 0.25) 0px 6px 12px -2px,
+    rgba(213, 203, 203, 0.3) 0px 3px 7px -3px;
 }
 .logo {
   width: 106px;
